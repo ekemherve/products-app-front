@@ -1,0 +1,22 @@
+<div class="card mt-3">
+  <div class="card-header text-white bg-info">
+    Header
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>UnitPrice</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let product of products'>
+          <td scope="row"><a href="#">{{product.name}}</a></td>
+          <td scope="row"><a>{{product.unitPrice | currency:''}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
