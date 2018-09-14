@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthenticationService } from '../services/authentication.service';
+import { CartService } from '../services/cart.service';
 
 
 
@@ -17,14 +18,14 @@ import { AuthenticationService } from '../services/authentication.service';
 
 export class NavbarComponent implements OnInit {
 
+  cartLength = 0;
 
-
-   constructor(private _service: AuthenticationService) { }
-
+   constructor(private _service: AuthenticationService, private _cartService: CartService) { }
 
 
     ngOnInit() {
 
+      this._cartService.currentCartlengthChanged.subscribe(res => this.cartLength = res);
     }
 
     isLoggedIn(): boolean {

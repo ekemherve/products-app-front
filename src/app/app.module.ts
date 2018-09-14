@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MyJwtInterceptor } from './interceptors/my-jwt-interceptor';
 import { ProductAddGuard } from './guards/product-add.guard';
 import { LogoutService } from './resolvers/logout.service';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Route[] = [
@@ -25,6 +26,7 @@ const routes: Route[] = [
   {path: 'add', component: ProductsAddComponent, canActivate: [ProductAddGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: WelcomeComponent, resolve: [LogoutService]},
+  { path: 'cart', component: CartComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -37,7 +39,8 @@ const routes: Route[] = [
     NavbarComponent,
     NotFoundComponent,
     ProductDetailsComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
